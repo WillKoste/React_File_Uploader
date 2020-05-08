@@ -6,7 +6,7 @@ const app = express();
 
 app.use(fileUpload());
 
-app.post('/upload', () => {
+app.post('/upload', (req, res) => {
   if(req.files === null){
     return resizeBy.status(400).json({msg: 'No file uploaded'});
   }
